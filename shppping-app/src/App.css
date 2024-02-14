@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Josefin+Slab:ital,wght@1,600&family=Lora&family=Space+Mono&family=Trirong:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5e5d1;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  background-color: #536730;
+}
+
+.nav-logo h2 {
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+  color: #e8e5e0;
+}
+
+.nav-items a {
+  margin: 0px 20px 0px 20px;
+  text-decoration: none;
+  font-family: "Space Mono", monospace;
+  color: #e8e5e0;
+}
+
+.nav-items a:hover {
+  color: #f5e5d1;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+@media (max-width: 768px) {
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    z-index: 1;
+    gap: 40px;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .nav-items.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-items {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 500px;
+  }
+  .home-img {
+    width: 300px;
+  }
+
+  .content {
+    width: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .home-img {
+    width: 300px;
+  }
+  .content h1 {
+    font-size: 2rem;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.image {
+  padding: 20px;
+}
+
+.home-img {
+  max-width: 400px;
+  max-height: 400px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.content p {
+  text-align: center;
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+
+button {
+  --primary-color: #536730;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 0.5em 1.2em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+  right: 0;
+}
