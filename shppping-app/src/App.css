@@ -129,6 +129,11 @@ body {
   .content {
     width: 400px;
   }
+
+  .top-title h1 {
+    padding: 10px 30px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 992px) {
@@ -239,4 +244,25 @@ button:hover .arrow {
 
 button:hover .arrow:before {
   right: 0;
+}
+
+.top-container {
+  margin-top: 5rem;
+}
+
+.top-title {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5%;
+  padding: 20px 30px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  cursor: pointer;
+  padding: 20px;
 }
