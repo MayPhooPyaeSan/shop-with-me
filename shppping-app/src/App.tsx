@@ -4,6 +4,8 @@ import Layout from "./components/Layout";
 import Blog from "./components/Blog";
 import Home from "./components/Home";
 
+import NewArrival from "./components/NewArrival";
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,7 @@ function App() {
               <>
                 <Layout />
                 <Home />
+                <NewArrival />
               </>
             }
           />
