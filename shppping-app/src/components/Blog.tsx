@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Blog = () => {
   return (
-    <div>
+    <div id="blog">
       <div
         style={{
           padding: "20px",

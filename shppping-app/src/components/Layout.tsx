@@ -4,23 +4,18 @@ import { useNavigate } from "react-router-dom";
 
 const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const navigate = useNavigate();
-
-  const handleCardClick = (route: any) => {
-    navigate(route);
-  };
-
-  const handleNavigation = (e: any) => {
-    e.preventDefault();
-    if (e.target.textContent === "Home") {
-      navigate("/");
+  const handleNavigation = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
     }
-    setMenuOpen(false);
   };
 
   return (
@@ -32,25 +27,26 @@ const Layout = () => {
           </div>
         </div>
         <div className={`nav-items ${menuOpen ? "open" : ""}`}>
-          <a href="#" onClick={handleNavigation}>
+          <a href="" onClick={() => handleNavigation("home")}>
             Home
           </a>
-          <a href="#products" onClick={handleNavigation}>
+          <a href="#" onClick={() => handleNavigation("products")}>
             Products
           </a>
-          <a href="#blog" onClick={handleNavigation}>
+          <a href="blog" onClick={() => handleNavigation("blog")}>
             Blog
           </a>
-          <a href="#contact" onClick={handleNavigation}>
+          <a href="" onClick={() => handleNavigation("contact")}>
             Contact
           </a>
-          <a href="#" onClick={handleNavigation}>
+          <a href="" onClick={() => handleNavigation("login")}>
             Login
           </a>
-          <a href="" onClick={handleNavigation}>
+          <a href="" onClick={() => handleNavigation("cart")}>
             <FaShoppingCart />
           </a>
         </div>
+
         <div className="hamburger" onClick={toggleMenu}>
           <input type="checkbox" checked={menuOpen} readOnly />
           <svg viewBox="0 0 32 32">
