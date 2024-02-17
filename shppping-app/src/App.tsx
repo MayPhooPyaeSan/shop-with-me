@@ -5,6 +5,7 @@ import Blog from "./components/Blog";
 import Home from "./components/Home";
 
 import NewArrival from "./components/NewArrival";
+import Banner from "./components/Banner";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                 <Layout />
                 <Home />
                 <NewArrival />
+                <Banner />
               </>
             }
           />

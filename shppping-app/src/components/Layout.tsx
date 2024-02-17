@@ -30,7 +30,7 @@ const Layout = () => {
           <a href="#" onClick={handleNavigation}>
             Home
           </a>
-          <a href="http://">Products</a>
+          <a href="#products">Products</a>
           <a href="" onClick={() => handleCardClick("/blog")}>
             Blog
           </a>

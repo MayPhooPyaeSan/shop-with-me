@@ -10,7 +10,7 @@ const Home = () => {
       <Carousel>
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block w-100 custom-image-class"
             src={homeimage1}
             alt="Living Room Furniture"
           />
@@ -23,7 +23,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block w-100 custom-image-class"
             src={homeimage2}
             alt="Bedroom Furniture"
           />
@@ -37,7 +37,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block w-100 custom-image-class"
             src={homeimage3}
             alt="Dining Room Furniture"
           />

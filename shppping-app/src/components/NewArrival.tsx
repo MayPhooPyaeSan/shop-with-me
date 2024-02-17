@@ -101,7 +101,7 @@ const NewArrival = () => {
   ];
 
   return (
-    <div className="container">
+    <div className="container" id="products">
       <h2 style={{ marginBottom: "2rem" }}>New Arrivals</h2>
       <Slider {...settings} className="image-slider">
         {products.map((products, index) => (
