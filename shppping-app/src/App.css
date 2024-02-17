@@ -238,3 +238,44 @@
   max-height: 300px;
   object-fit: cover;
 }
+
+.footer-div {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.links-div {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.links-div a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .footer-section {
+    width: 30%;
+  }
+}

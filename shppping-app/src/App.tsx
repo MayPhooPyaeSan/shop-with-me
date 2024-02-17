@@ -3,10 +3,10 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Layout from "./components/Layout";
 import Blog from "./components/Blog";
 import Home from "./components/Home";
-
 import NewArrival from "./components/NewArrival";
 import Banner from "./components/Banner";
 import BestSelling from "./components/BestSelling";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
                 <NewArrival />
                 <Banner />
                 <BestSelling />
+                <Footer />
               </>
             }
           />
