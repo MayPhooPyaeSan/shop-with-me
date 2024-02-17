@@ -5,12 +5,8 @@ import { useNavigate } from "react-router-dom";
 const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = (e: any) => {
-    e.preventDefault();
+  const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-  };
-  const handleNavigation = (e: any) => {
-    e.preventDefault();
   };
 
   const navigate = useNavigate();
@@ -18,6 +14,15 @@ const Layout = () => {
   const handleCardClick = (route: any) => {
     navigate(route);
   };
+
+  const handleNavigation = (e: any) => {
+    e.preventDefault();
+    if (e.target.textContent === "Home") {
+      navigate("/");
+    }
+    setMenuOpen(false);
+  };
+
   return (
     <div>
       <div className="navbar-container">
@@ -30,13 +35,19 @@ const Layout = () => {
           <a href="#" onClick={handleNavigation}>
             Home
           </a>
-          <a href="#products">Products</a>
-          <a href="" onClick={() => handleCardClick("/blog")}>
+          <a href="#products" onClick={handleNavigation}>
+            Products
+          </a>
+          <a href="#blog" onClick={handleNavigation}>
             Blog
           </a>
-          <a href="http://">Contact</a>
-          <a href="http://">Login</a>
-          <a href="" onClick={() => handleCardClick("/cart")}>
+          <a href="#contact" onClick={handleNavigation}>
+            Contact
+          </a>
+          <a href="#" onClick={handleNavigation}>
+            Login
+          </a>
+          <a href="" onClick={handleNavigation}>
             <FaShoppingCart />
           </a>
         </div>
