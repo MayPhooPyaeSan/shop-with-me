@@ -102,18 +102,20 @@ const NewArrival = () => {
 
   return (
     <div className="container" id="products">
-      <h2 style={{ marginBottom: "2rem" }}>New Arrivals</h2>
+      <h2 style={{ marginBottom: "2rem" }} className="title">
+        Best Selling
+      </h2>
       <Slider {...settings} className="image-slider">
-        {products.map((products, index) => (
+        {products.map((product, index) => (
           <div key={index} className="custom-slide">
             <img
-              src={products.imageUrl}
+              src={product.imageUrl}
               alt={`image-${index}`}
               className="image-slider small-image"
             />
             <div className="card-body">
-              <p>{products.name}</p>
-              <p>{products.price}</p>
+              <p>{product.name}</p>
+              <p>{product.price}</p>
             </div>
           </div>
         ))}

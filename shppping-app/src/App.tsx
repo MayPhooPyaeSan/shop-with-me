@@ -6,6 +6,7 @@ import Home from "./components/Home";
 
 import NewArrival from "./components/NewArrival";
 import Banner from "./components/Banner";
+import BestSelling from "./components/BestSelling";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Home />
                 <NewArrival />
                 <Banner />
+                <BestSelling />
               </>
             }
           />
